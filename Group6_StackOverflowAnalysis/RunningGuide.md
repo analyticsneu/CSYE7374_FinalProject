@@ -12,10 +12,10 @@
     2.java -jar "name of generated jar file"
     
 ###3. Start Kafka Broker.
-    1. bin/start-kafka.
+     bin/start-kafka.
 
 ###4. Start spark streaming processer.
-    1. spark-submit 
+     spark-submit 
  <br />
 ##Part 2: OLAP
 1. Download and start HBase.
