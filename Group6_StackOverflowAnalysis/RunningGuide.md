@@ -19,10 +19,10 @@
 
  <br />
 ##Part 2: OLAP
-###1. Download and start HBase.
-###2. Start final project using java -jar command.
+1. Download and start HBase.
+2. Start final project using java -jar command.
  <br />
 
 ##Part 3: Benchmark
-###1. Run one of script we have uploaded.
-###2. Start Timer to count the elapse.
+1. Run one of script we have uploaded.
+2. Start Timer to count the elapse.
