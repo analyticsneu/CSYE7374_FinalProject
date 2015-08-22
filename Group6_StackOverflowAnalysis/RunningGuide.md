@@ -15,12 +15,14 @@
      bin/start-kafka.
 
 ###4. Start spark streaming processer.
-     spark-submit 
+     bin/spark-submit --jars lib/spark-streaming-kafka-assembly_2.10-1.4.0.jar examples/src/main/python/streaming/kafka_wordDetector.py localhost:2181 topic1
+
  <br />
 ##Part 2: OLAP
 1. Download and start HBase.
 2. Start final project using java -jar command.
  <br />
+
 ##Part 3: Benchmark
 1. Run one of script we have uploaded.
 2. Start Timer to count the elapse.
