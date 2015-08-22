@@ -1,0 +1,17 @@
+Running the algorithms on pyspark
+
+sudo pip-2.7 install BeautifulSoup4
+sudo pip-2.7 install -U nltk
+
+cd /usr/lib/spark/
+
+sudo SPARK_MEM=10g bin/pyspark --conf spark.akka.frameSize=100
+
+
+import nltk
+nltk.download()
+
+
+download with keywords:
+punkt
+stopwords
