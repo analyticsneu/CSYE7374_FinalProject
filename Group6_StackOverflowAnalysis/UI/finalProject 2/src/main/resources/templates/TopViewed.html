@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="" />
+<meta name="author" content="" />
+
+<title>Dashboard for Final Project</title>
+
+<!-- Bootstrap core CSS -->
+<link href="../css/bootstrap.min.css"
+	th:href="@{../css/bootstrap.min.css}" rel="stylesheet" media="screen" />
+
+<!-- Custom styles for this template -->
+<link href="../css/dashboard.css" th:href="@{../css/dashboard.css}"
+	rel="stylesheet" />
+<script src="http://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="http://www.amcharts.com/lib/3/funnel.js"></script>
+<script src="http://www.amcharts.com/lib/3/themes/dark.js"></script>
+<script type="text/javascript">
+var chart = AmCharts.makeChart( "chartdiv", {
+	  "type": "funnel",
+	  "theme": "dark",
+	  "dataProvider": [ {
+	    "title": "Make a number more probable to result from random",
+	    "value": 992
+	  }, {
+	    "title": "Clicking hamburger icon on Toolbar does not open Navigation Drawer",
+	    "value": 987
+	  }, {
+	    "title": "laravel 5.1 Route::post not working randomly",
+	    "value": 984
+	  }, {
+	    "title": "You do not have sufficient permissions to view this page",
+	    "value": 980
+	  }, {
+	    "title": "PHP Mail - Multiple or malformed newlines found",
+	    "value": 972
+	  }, {
+	    "title": "Unable to start debugging in Visual Studio RTM for cordova app",
+	    "value": 971
+	  }, {
+	    "title": "compiling caffe on Yosemite",
+	    "value": 970
+	  },{
+		    "title": "Why can't Javascript parse this JSON array from a string literal?",
+		    "value": 969
+      }, {
+	    "title": "Application windows are expected to have a root view controller at the end of application launch” error when running a project with Xcode 7",
+	    "value": 967
+	  }, {
+		    "title": "This webpage is not available ERR_NAME_NOT_RESOLVED",
+		    "value": 965
+	  }],
+	  "balloon": {
+	    "fixedPosition": true
+	  },
+	  "valueField": "value",
+	  "titleField": "title",
+	  "marginRight": 240,
+	  "marginLeft": 50,
+	  "startX": -500,
+	  "depth3D": 100,
+	  "angle": 40,
+	  "outlineAlpha": 1,
+	  "outlineColor": "#FFFFFF",
+	  "outlineThickness": 2,
+	  "labelPosition": "right",
+	  "balloonText": "[[title]]: [[value]]n[[description]]",
+	  "export": {
+	    "enabled": true
+	  }
+	} );
+</script>
+</head>
+
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Project name</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Dashboard</a></li>
+					<li><a href="#">Settings</a></li>
+					<li><a href="#">Profile</a></li>
+					<li><a href="#">Help</a></li>
+				</ul>
+				<form class="navbar-form navbar-right">
+					<input type="text" class="form-control" placeholder="Search..." />
+				</form>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3 col-md-2 sidebar">
+				<ul class="nav nav-sidebar">
+					<li class="active"><a href="#">Overview <span
+							class="sr-only">(current)</span></a></li>
+					<li><a href="/index">Overview</a></li>
+					<li><a href="/topDiscussed">Top Discussed</a></li>
+					<li><a href="/topViewed">Top Viewed</a></li>
+					<li><a href="/topAnswered">Top Answered</a></li>
+					<li><a href="/topUpvote">Top Upvote</a></li>
+					<li><a href="/association">Association Analysis</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<h1 class="page-header">Dashboard (Total Viewed:18027731)</h1>
+				<div id="chartdiv" class = "col-md-9" style="width: 960px; height: 480px; background: #3f3f4f;color:#ffffff;"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js" th:src="@{../js/bootstrap.min.js}"></script>
+
+</body>
+</html>

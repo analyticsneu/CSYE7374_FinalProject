@@ -1,0 +1,31 @@
+  {
+	 "name": "flare",
+	 "children": [
+	  {
+	   "name": "analytics",
+	   "children": [
+	    {
+	     "name": "cluster",
+	     "children": [
+	      {"name": "Javascript", "size": 3938},
+	      {"name": "HTML", "size": 3812}
+	     ]
+	    },
+	    {
+	     "name": "graph",
+	     "children": [
+	      {"name": "JSON", "size": 3534},
+	      {"name": "Javascript", "size": 5731},
+	      {"name": "Jquery", "size": 7840}
+	     ]
+	    },
+	    {
+	     "name": "optimization",
+	     "children": [
+	      {"name": "Python", "size": 7074}
+	     ]
+	    }
+	   ]
+	  }
+	 ]
+	}
