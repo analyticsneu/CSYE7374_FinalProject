@@ -5,6 +5,8 @@ from datetime import date, timedelta
 import calendar
 import random
 from collections import OrderedDict
+import sys
+
 
 def createTable(cursor):
     createSQLList = []
@@ -36,6 +38,22 @@ def createTable(cursor):
     createSQLList.append("create table if not exists climateYearly ( \
                                             station varchar(11), \
                                             date date, \
+                                            prcp double, \
+                                            tmax double, \
+                                            tmin double, \
+                                            tavg double, \
+                                            primary key (station, date));")
+    createSQLList.append("create table if not exists climateForecast ( \
+                                            station varchar(11), \
+                                            date date, \
+                                            prcp double, \
+                                            tmax double, \
+                                            tmin double, \
+                                            tavg double, \
+                                            primary key (station, date));")
+    createSQLList.append("create table if not exists climateCurrent ( \
+                                            station varchar(11), \
+                                            datetime date, \
                                             prcp double, \
                                             tmax double, \
                                             tmin double, \
@@ -161,12 +179,12 @@ def aggregateYearlyData(cursor, db):
         db.commit()
 
 if __name__ == "__main__":
-    db = MySQLdb.connect(host="172.31.52.211", user="dataAdmin", db="data")
+    db = MySQLdb.connect(host=sys.argv[0], user="dataAdmin", db="data")
     cursor = db.cursor()
     createTable(cursor)
-    dataDir = "/home/ubuntu/data/ghcnd_hcn"
+    dataDir = sys.argv[1]
     stations = insertDailyData(dataDir, cursor)
-    metaFile = "/home/ubuntu/data/ghcnd-stations.txt"
+    metaFile = sys.argv[2]
     insertStationMetaData(metaFile, cursor, stations)
     aggregateMonthlyData(cursor, db)
     aggregateYearlyData(cursor, db)
