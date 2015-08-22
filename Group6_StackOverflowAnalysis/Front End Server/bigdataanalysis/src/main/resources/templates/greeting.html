@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Getting Started: Serving Web Content</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript">
+function load()
+{
+window.status="Page is loaded"
+}
+</script>
+</head>
+<body onload="load()">
+	<p th:text="'Hello, ' + ${name} + '!'" />
+
+	<form action="#" method="POST">
+		<input type="submit" name="clickButton" value="Click Me!"></input>
+	</form>
+
+</body>
+</html>

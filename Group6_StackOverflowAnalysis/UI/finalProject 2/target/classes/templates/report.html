@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="" />
+<meta name="author" content="" />
+
+<title>Dashboard for Final Project</title>
+
+<!-- Bootstrap core CSS -->
+<link href="../css/bootstrap.min.css"
+	th:href="@{../css/bootstrap.min.css}" rel="stylesheet" media="screen" />
+
+<!-- Custom styles for this template -->
+<link href="../css/dashboard.css" th:href="@{../css/dashboard.css}"
+	rel="stylesheet" />
+<script src="http://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="http://www.amcharts.com/lib/3/serial.js"></script>
+<script src="http://www.amcharts.com/lib/3/themes/light.js"></script>
+<script type="text/javascript">
+
+	var chart = AmCharts.makeChart("chartdiv", {
+		"theme" : "light",
+		"type" : "serial",
+		"startDuration" : 2,
+		"dataProvider" : [ {
+			"country" : "USA",
+			"visits" : 4025,
+			"color" : "#FF0F00"
+		}, {
+			"country" : "China",
+			"visits" : 1882,
+			"color" : "#FF6600"
+		}, {
+			"country" : "Japan",
+			"visits" : 1809,
+			"color" : "#FF9E01"
+		}, {
+			"country" : "Germany",
+			"visits" : 1322,
+			"color" : "#FCD202"
+		}, {
+			"country" : "UK",
+			"visits" : 1122,
+			"color" : "#F8FF01"
+		}, {
+			"country" : "France",
+			"visits" : 1114,
+			"color" : "#B0DE09"
+		}, {
+			"country" : "India",
+			"visits" : 984,
+			"color" : "#04D215"
+		}, {
+			"country" : "Spain",
+			"visits" : 711,
+			"color" : "#0D8ECF"
+		}, {
+			"country" : "Netherlands",
+			"visits" : 665,
+			"color" : "#0D52D1"
+		}, {
+			"country" : "Russia",
+			"visits" : 580,
+			"color" : "#2A0CD0"
+		}, {
+			"country" : "South Korea",
+			"visits" : 443,
+			"color" : "#8A0CCF"
+		}, {
+			"country" : "Canada",
+			"visits" : 441,
+			"color" : "#CD0D74"
+		}, {
+			"country" : "Brazil",
+			"visits" : 395,
+			"color" : "#754DEB"
+		}, {
+			"country" : "Italy",
+			"visits" : 386,
+			"color" : "#DDDDDD"
+		}, {
+			"country" : "Australia",
+			"visits" : 384,
+			"color" : "#999999"
+		}, {
+			"country" : "Taiwan",
+			"visits" : 338,
+			"color" : "#333333"
+		}, {
+			"country" : "Poland",
+			"visits" : 328,
+			"color" : "#000000"
+		} ],
+		"valueAxes" : [ {
+			"position" : "left",
+			"title" : "Visitors"
+		} ],
+		"graphs" : [ {
+			"balloonText" : "[[category]]: <b>[[value]]</b>",
+			"fillColorsField" : "color",
+			"fillAlphas" : 1,
+			"lineAlpha" : 0.1,
+			"type" : "column",
+			"valueField" : "visits"
+		} ],
+		"depth3D" : 20,
+		"angle" : 30,
+		"chartCursor" : {
+			"categoryBalloonEnabled" : false,
+			"cursorAlpha" : 0,
+			"zoomable" : false
+		},
+		"categoryField" : "country",
+		"categoryAxis" : {
+			"gridPosition" : "start",
+			"labelRotation" : 90
+		},
+		"export" : {
+			"enabled" : true
+		}
+
+	});
+</script>
+</head>
+
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Project name</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Dashboard</a></li>
+					<li><a href="#">Settings</a></li>
+					<li><a href="#">Profile</a></li>
+					<li><a href="#">Help</a></li>
+				</ul>
+				<form class="navbar-form navbar-right">
+					<input type="text" class="form-control" placeholder="Search..." />
+				</form>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3 col-md-2 sidebar">
+				<ul class="nav nav-sidebar">
+					<li class="active"><a href="#">Overview <span
+							class="sr-only">(current)</span></a></li>
+				  <li><a href="/index">Overview</a></li>
+					<li><a href="/topDiscussed">Top Discussed</a></li>
+					<li><a href="/topViewed">Top Viewed</a></li>
+					<li><a href="/topAnswered">Top Answered</a></li>
+					<li><a href="/topUpvote">Top Upvote</a></li>
+					<li><a href="#">Association Analysis</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<h1 class="page-header">Dashboard</h1>
+				<div id="chartdiv" class = "col-md-9 col-md-offset-1" style="width: 640px; height: 400px;"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js" th:src="@{../js/bootstrap.min.js}"></script>
+
+</body>
+</html>
