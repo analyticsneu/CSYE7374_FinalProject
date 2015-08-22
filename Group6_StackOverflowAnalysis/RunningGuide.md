@@ -1,11 +1,11 @@
-# Running Document #
+# Running Document 
 
-## Part 1:  Real Time Analysis. ##
+## Part 1:  Real Time Analysis. 
 ### 1. Run Web Crawler. 
-### 2. Navigate to crawler project.
-    2. pip install scrapy
-    3. download and start Mongodb.
-    4. scrapy crawler stack.### 
+    2. Navigate to crawler project.
+    3. pip install scrapy
+    4. download and start Mongodb.
+    5. scrapy crawler stack.
 
 2. Run Front end server and kafka producer.
     1.go to bigdataanylytic project, mvn package.
